@@ -1,9 +1,5 @@
 #include "colors.h"
 
-/* user and group to drop privileges to */
-static const char *user  = "sid";
-static const char *group = "sid";
-
 static const char *colorname[NUMCOLS] = {
     [BACKGROUND] = "#000000",
 	[INIT]       = d_blue,     /* after initialization */
