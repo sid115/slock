@@ -1,16 +1,18 @@
+#include "colors.h"
+
 /* user and group to drop privileges to */
-static const char *user  = "nobody";
-static const char *group = "nogroup";
+static const char *user  = "sid";
+static const char *group = "sid";
 
 static const char *colorname[NUMCOLS] = {
-    [BACKGROUND] = "white",
-	[INIT] =   "2d2d2d",     /* after initialization */
-	[INPUT] =  "#005577",   /* during input */
-	[FAILED] = "#CC3333",   /* wrong password */
+    [BACKGROUND] = "#000000",
+	[INIT]       = d_blue,     /* after initialization */
+	[INPUT]      = d_yellow,   /* during input */
+	[FAILED]     = d_red,      /* wrong password */
 };
 
 /* treat a cleared input like a wrong password (color) */
-static const int failonclear = 1;
+static const int failonclear = 0;
 
 /* time in seconds before the monitor shuts down */
 static const int monitortime = 5;
@@ -34,7 +36,7 @@ static XRectangle rectangles[9] = {
 /*Enable blur*/
 #define BLUR
 /*Set blur radius*/
-static const int blurRadius=5;
+static const int blurRadius=12;
 /*Enable Pixelation*/
 //#define PIXELATION
 /*Set pixelation radius*/
