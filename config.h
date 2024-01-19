@@ -1,10 +1,8 @@
-#include "colors.h"
-
 static const char *colorname[NUMCOLS] = {
     [BACKGROUND] = "#000000",
-	[INIT]       = d_blue,     /* after initialization */
-	[INPUT]      = d_yellow,   /* during input */
-	[FAILED]     = d_red,      /* wrong password */
+	[INIT]       = "#000000", /* after initialization */
+	[INPUT]      = "#005577", /* during input */
+	[FAILED]     = "#cc3333", /* wrong password */
 };
 
 /* treat a cleared input like a wrong password (color) */
@@ -37,3 +35,13 @@ static const int blurRadius=12;
 //#define PIXELATION
 /*Set pixelation radius*/
 static const int pixelSize=0;
+
+/*
+ * Xresources preferences to load at startup
+ */
+ResourcePref resources[] = {
+		{ "color0",       STRING,  &colorname[INIT] },
+		{ "color4",       STRING,  &colorname[INPUT] },
+		{ "color1",       STRING,  &colorname[FAILED] },
+		{ "color3",       STRING,  &colorname[BACKGROUND] },
+};
